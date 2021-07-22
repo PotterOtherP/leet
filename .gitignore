@@ -1,3 +1,9 @@
+.vscode/
+bin/
+obj/
+*.csproj
+
+
 # Prerequisites
 *.d
 
