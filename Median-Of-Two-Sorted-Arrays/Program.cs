@@ -6,8 +6,8 @@ namespace Median_Of_Two_Sorted_Arrays
     {
         static void Main(string[] args) {
 
-            int[] nums1 = {1, 2, 3, 88};
-            int[] nums2 = {3, 4, 5, 6, 7, 12};
+            int[] nums1 = {1, 2, 3, 7, 11, 16, 25, 34, 61, 88};
+            int[] nums2 = {3, 4, 5, 22, 41, 55, 112};
 
             Console.Write($"nums1: ");
             PrintArray(nums1);
@@ -26,12 +26,12 @@ namespace Median_Of_Two_Sorted_Arrays
 
             if (nums1.Length >= nums2.Length)
             {
-                median = FindMedianSortedArrays(nums1, nums2);
+                median2 = FindMedianSortedArrays(nums1, nums2);
             }
 
             else
             {
-                median = FindMedianSortedArrays(nums2, nums1);
+                median2 = FindMedianSortedArrays(nums2, nums1);
             }
 
             Console.WriteLine($"Median of merged array by algorithm: {median2}");
@@ -47,6 +47,9 @@ namespace Median_Of_Two_Sorted_Arrays
 
             int m = nums1.Length;
             int n = nums2.Length;
+
+            if (m < 1) return MedianOfSingleArray(nums2);
+            if (n < 1) return MedianOfSingleArray(nums1);
 
             bool odd = (m + n) % 2 == 1;
 
@@ -64,7 +67,7 @@ namespace Median_Of_Two_Sorted_Arrays
                 // Number of elements below the median
                 int magicNumber = (odd)? (m + n - 1) / 2 : (m + n) / 2;
 
-                
+
             }
 
         }
